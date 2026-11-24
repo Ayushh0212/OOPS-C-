@@ -1,0 +1,24 @@
+#include<iostream>
+#include<string>
+using namespace std;
+template <typename T>
+class Compare {
+	T v1, v2;
+	public:
+		Compare(T a, T b) : v1(a), v2(b){
+		cout<<"Constructor called"<<endl;
+		}
+		~Compare() {
+		cout<<"Destructor called"<<endl;
+		}
+	T bigger(){
+	return (v1>v2? v1 : v2);
+	}
+};
+int main(){
+	Compare<int> c1(23,7);
+	Compare<string> c2("hello","world");
+	cout<<c1.bigger()<<endl;
+	cout<<c2.bigger()<<endl;
+	return 0;
+}
